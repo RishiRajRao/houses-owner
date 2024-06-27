@@ -5,7 +5,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Checkbox,
   Button,
   Heading,
   Text,
@@ -13,7 +12,6 @@ import {
   useColorModeValue,
   Box,
   InputGroup,
-  HStack,
   InputRightElement,
   Stack,
 } from "@chakra-ui/react";

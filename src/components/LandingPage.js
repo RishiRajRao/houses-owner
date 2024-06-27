@@ -7,13 +7,10 @@ import {
   Heading,
   Text,
   Container,
-  Input,
-  Button,
   SimpleGrid,
   Avatar,
   AvatarGroup,
   useBreakpointValue,
-  IconProps,
   Icon,
 } from "@chakra-ui/react";
 
@@ -67,19 +64,11 @@ const Blur = (props) => {
 };
 
 export default function LandingPage() {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    mobile: "",
-    password: "",
-  });
-
   const [toggleSignup, setToggleSignup] = useState(false);
 
   const handleSignup = () => {
     setToggleSignup((prev) => !prev);
   };
-  console.log("usr==", user);
 
   return (
     <Box position={"relative"}>
