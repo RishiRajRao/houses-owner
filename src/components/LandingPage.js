@@ -12,11 +12,14 @@ import {
   AvatarGroup,
   useBreakpointValue,
   Icon,
+  Image,
+  Center,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
 import LoginPage from "./LoginPage";
 import SignUpPage from "./SignUpPage";
+import siteLogo from "../assets/logo.png";
 
 const avatars = [
   {
@@ -159,7 +162,7 @@ export default function LandingPage() {
           maxW={{ lg: "lg" }}
         >
           <Stack spacing={4}>
-            <Heading
+            {/* <Heading
               color={"gray.800"}
               lineHeight={1.1}
               fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
@@ -172,10 +175,15 @@ export default function LandingPage() {
               >
                 !
               </Text>
-            </Heading>
-            <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-              Let other people know about your Housing experience!
-            </Text>
+            </Heading> */}
+            <Center>
+              <Image maxWidth={"200px"} objectFit="cover" src={siteLogo} />
+            </Center>
+            <Center>
+              <Text color={"blue.600"} fontSize={{ base: "sm", sm: "md" }}>
+                Let other people know about your Housing experience!
+              </Text>
+            </Center>
           </Stack>
           {toggleSignup ? (
             <SignUpPage handleSignup={handleSignup} />

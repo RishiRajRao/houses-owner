@@ -10,7 +10,7 @@ import {
   InputRightElement,
   Stack,
   Button,
-  Heading,
+  // Heading,
   Text,
   useColorModeValue,
   Link,
@@ -28,11 +28,11 @@ export default function SignUpPage({ handleSignup }) {
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
     >
-      <Stack spacing={8} mx={"auto"} px={6}>
+      <Stack spacing={1} mx={"auto"} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"xl"} textAlign={"center"}>
+          {/* <Heading fontSize={"xl"} textAlign={"center"}>
             Sign up
-          </Heading>
+          </Heading> */}
           {/* <Text fontSize={"lg"} color={"gray.600"}>
             to enjoy all of our cool features ✌️
           </Text> */}

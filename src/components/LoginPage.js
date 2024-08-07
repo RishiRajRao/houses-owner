@@ -6,7 +6,7 @@ import {
   FormLabel,
   Input,
   Button,
-  Heading,
+  // Heading,
   Text,
   Link,
   useColorModeValue,
@@ -30,9 +30,9 @@ export default function LoginPage({ handleSignup }) {
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
     >
-      <Stack spacing={8} mx={"auto"} maxW={"lg"} px={6}>
+      <Stack spacing={1} mx={"auto"} maxW={"lg"} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"xl"}>Login</Heading>
+          {/* <Heading fontSize={"xl"}>Login</Heading> */}
           {/* <Text fontSize={"lg"} color={"gray.600"}>
             to enjoy all of our cool <Text color={"blue.400"}>features</Text> ✌️
           </Text> */}
