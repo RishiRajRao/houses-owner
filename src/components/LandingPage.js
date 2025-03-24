@@ -12,42 +12,42 @@ import {
   AvatarGroup,
   useBreakpointValue,
   Icon,
-  Image,
   Center,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { useState } from "react";
-import LoginPage from "./LoginPage";
-import SignUpPage from "./SignUpPage";
-import siteLogo from "../assets/logo.png";
+import NavBar from './NavBar';
+
+import { useState } from 'react';
+import LoginPage from './LoginPage';
+import SignUpPage from './SignUpPage';
 
 const avatars = [
   {
-    name: "Ryan Florence",
-    url: "https://bit.ly/ryan-florence",
+    name: 'Ryan Florence',
+    url: 'https://bit.ly/ryan-florence',
   },
   {
-    name: "Segun Adebayo",
-    url: "https://bit.ly/sage-adebayo",
+    name: 'Segun Adebayo',
+    url: 'https://bit.ly/sage-adebayo',
   },
   {
-    name: "Kent Dodds",
-    url: "https://bit.ly/kent-c-dodds",
+    name: 'Kent Dodds',
+    url: 'https://bit.ly/kent-c-dodds',
   },
   {
-    name: "Prosper Otemuyiwa",
-    url: "https://bit.ly/prosper-baba",
+    name: 'Prosper Otemuyiwa',
+    url: 'https://bit.ly/prosper-baba',
   },
   {
-    name: "Christian Nwamba",
-    url: "https://bit.ly/code-beast",
+    name: 'Christian Nwamba',
+    url: 'https://bit.ly/code-beast',
   },
 ];
 
 const Blur = (props) => {
   return (
     <Icon
-      width={useBreakpointValue({ base: "100%", md: "40vw", lg: "30vw" })}
+      width={useBreakpointValue({ base: '100%', md: '40vw', lg: '30vw' })}
       zIndex={useBreakpointValue({ base: -1, md: -1, lg: 0 })}
       height="560px"
       viewBox="0 0 528 560"
@@ -74,95 +74,100 @@ export default function LandingPage() {
   };
 
   return (
-    <Box position={"relative"}>
-      <Container
-        as={SimpleGrid}
-        maxW={"7xl"}
-        columns={{ base: 1, md: 2 }}
-        spacing={{ base: 10, lg: 32 }}
-        py={{ base: 10, sm: 20, lg: 32 }}
-      >
-        <Stack spacing={{ base: 10, md: 20 }}>
-          <Heading
-            lineHeight={1.1}
-            fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
-          >
-            It's not about money{" "}
-            <Text
-              as={"span"}
-              bgGradient="linear(to-r, red.400,pink.400)"
-              bgClip="text"
-            >
-              ,
-            </Text>{" "}
-            It's about sending a message
-          </Heading>
-          <Stack direction={"row"} spacing={4} align={"center"}>
-            <AvatarGroup>
-              {avatars.map((avatar) => (
-                <Avatar
-                  key={avatar.name}
-                  name={avatar.name}
-                  src={avatar.url}
-                  // eslint-disable-next-line react-hooks/rules-of-hooks
-                  size={useBreakpointValue({ base: "md", md: "lg" })}
-                  position={"relative"}
-                  zIndex={2}
-                  _before={{
-                    content: '""',
-                    width: "full",
-                    height: "full",
-                    rounded: "full",
-                    transform: "scale(1.125)",
-                    bgGradient: "linear(to-bl, red.400,pink.400)",
-                    position: "absolute",
-                    zIndex: -1,
-                    top: 0,
-                    left: 0,
-                  }}
-                />
-              ))}
-            </AvatarGroup>
-            <Text fontFamily={"heading"} fontSize={{ base: "4xl", md: "6xl" }}>
-              +
-            </Text>
-            <Flex
-              align={"center"}
-              justify={"center"}
-              fontFamily={"heading"}
-              fontSize={{ base: "sm", md: "lg" }}
-              bg={"gray.800"}
-              color={"white"}
-              rounded={"full"}
-              minWidth={useBreakpointValue({ base: "44px", md: "60px" })}
-              minHeight={useBreakpointValue({ base: "44px", md: "60px" })}
-              position={"relative"}
-              _before={{
-                content: '""',
-                width: "full",
-                height: "full",
-                rounded: "full",
-                transform: "scale(1.125)",
-                bgGradient: "linear(to-bl, orange.400,yellow.400)",
-                position: "absolute",
-                zIndex: -1,
-                top: 0,
-                left: 0,
-              }}
-            >
-              YOU
-            </Flex>
-          </Stack>
-        </Stack>
-        <Stack
-          bg={"gray.50"}
-          rounded={"xl"}
-          p={{ base: 4, sm: 6, md: 8 }}
-          spacing={{ base: 8 }}
-          maxW={{ lg: "lg" }}
+    <div>
+      <NavBar />
+      <Box position={'relative'}>
+        <Container
+          as={SimpleGrid}
+          maxW={'5xl'}
+          columns={{ base: 1, md: 2 }}
+          spacing={{ base: 10, lg: 32 }}
+          py={{ base: 10, sm: 20, lg: 32 }}
         >
-          <Stack spacing={4}>
-            {/* <Heading
+          <Stack spacing={{ base: 10, md: 20 }}>
+            <Heading
+              lineHeight={1.1}
+              fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+            >
+              It's not about money{' '}
+              <Text
+                as={'span'}
+                bgGradient="linear(to-r, red.400,pink.400)"
+                bgClip="text"
+              >
+                ,
+              </Text>{' '}
+              It's about sending a message
+            </Heading>
+            <Stack direction={'row'} spacing={4} align={'center'}>
+              <AvatarGroup>
+                {avatars.map((avatar) => (
+                  <Avatar
+                    key={avatar.name}
+                    name={avatar.name}
+                    src={avatar.url}
+                    // eslint-disable-next-line react-hooks/rules-of-hooks
+                    size={useBreakpointValue({ base: 'md', md: 'lg' })}
+                    position={'relative'}
+                    zIndex={2}
+                    _before={{
+                      content: '""',
+                      width: 'full',
+                      height: 'full',
+                      rounded: 'full',
+                      transform: 'scale(1.125)',
+                      bgGradient: 'linear(to-bl, red.400,pink.400)',
+                      position: 'absolute',
+                      zIndex: -1,
+                      top: 0,
+                      left: 0,
+                    }}
+                  />
+                ))}
+              </AvatarGroup>
+              <Text
+                fontFamily={'heading'}
+                fontSize={{ base: '4xl', md: '6xl' }}
+              >
+                +
+              </Text>
+              <Flex
+                align={'center'}
+                justify={'center'}
+                fontFamily={'heading'}
+                fontSize={{ base: 'sm', md: 'lg' }}
+                bg={'gray.800'}
+                color={'white'}
+                rounded={'full'}
+                minWidth={useBreakpointValue({ base: '44px', md: '60px' })}
+                minHeight={useBreakpointValue({ base: '44px', md: '60px' })}
+                position={'relative'}
+                _before={{
+                  content: '""',
+                  width: 'full',
+                  height: 'full',
+                  rounded: 'full',
+                  transform: 'scale(1.125)',
+                  bgGradient: 'linear(to-bl, orange.400,yellow.400)',
+                  position: 'absolute',
+                  zIndex: -1,
+                  top: 0,
+                  left: 0,
+                }}
+              >
+                YOU
+              </Flex>
+            </Stack>
+          </Stack>
+          <Stack
+            bg={'gray.50'}
+            rounded={'xl'}
+            p={{ base: 4, sm: 6, md: 8 }}
+            spacing={{ base: 8 }}
+            maxW={{ lg: 'lg' }}
+          >
+            <Stack spacing={4}>
+              {/* <Heading
               color={"gray.800"}
               lineHeight={1.1}
               fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
@@ -176,21 +181,19 @@ export default function LandingPage() {
                 !
               </Text>
             </Heading> */}
-            <Center>
-              <Image maxWidth={"200px"} objectFit="cover" src={siteLogo} />
-            </Center>
-            <Center>
-              <Text color={"blue.600"} fontSize={{ base: "sm", sm: "md" }}>
-                Let other people know about your Housing experience!
-              </Text>
-            </Center>
-          </Stack>
-          {toggleSignup ? (
-            <SignUpPage handleSignup={handleSignup} />
-          ) : (
-            <LoginPage handleSignup={handleSignup} />
-          )}
-          {/* <Box as={"form"} mt={10}>
+
+              <Center>
+                <Text color={'pink.700'} fontSize={{ base: 'sm', sm: 'lg' }}>
+                  “SHARE YOUR HOUSING EXPERIENCE”
+                </Text>
+              </Center>
+            </Stack>
+            {toggleSignup ? (
+              <SignUpPage handleSignup={handleSignup} />
+            ) : (
+              <LoginPage handleSignup={handleSignup} />
+            )}
+            {/* <Box as={"form"} mt={10}>
             <Stack spacing={4}>
               <Input
                 placeholder="Name"
@@ -260,15 +263,16 @@ export default function LandingPage() {
               Submit
             </Button>
           </Box> */}
-          form
-        </Stack>
-      </Container>
-      <Blur
-        position={"absolute"}
-        top={-10}
-        left={-10}
-        style={{ filter: "blur(70px)" }}
-      />
-    </Box>
+            form
+          </Stack>
+        </Container>
+        <Blur
+          position={'absolute'}
+          top={-10}
+          left={-10}
+          style={{ filter: 'blur(70px)' }}
+        />
+      </Box>
+    </div>
   );
 }

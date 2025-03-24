@@ -12,45 +12,50 @@ import {
   // AvatarBadge,
   // IconButton,
   // Center,
-} from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { getUserProfile } from "../services/authService";
+} from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import { getUserProfileHandler } from '../services/authService';
 // import { SmallCloseIcon } from "@chakra-ui/icons";
 
 export default function UserProfile() {
-  const [user, setUser] = useState({ name: "", email: "", mobile: "" });
+  const [user, setUser] = useState({ name: '', email: '', id: '' });
   const toast = useToast();
-  useEffect(() => {
+
+  const getUserProfile = async () => {
     try {
-      const user = getUserProfile();
+      const user = await getUserProfileHandler();
+
       setUser(user);
     } catch (error) {
       toast({
-        title: "Error occured.",
+        title: 'Error occured.',
         description: error.message,
-        status: "error",
+        status: 'error',
       });
     }
+  };
+  useEffect(() => {
+    getUserProfile();
   }, []);
 
   return (
     <Flex
       // minH={"100vh"}
-      minW={"80vw"}
-      align={"top"}
+      minW={'80vw'}
+      align={'top'}
       // justify={"center"}
       // bg={useColorModeValue("gray.50", "gray.800")}
     >
       <Stack
         spacing={4}
-        w={"full"}
-        maxW={"xl"}
-        bg={useColorModeValue("white", "gray.700")}
-        rounded={"xl"}
-        boxShadow={"lg"}
+        w={'full'}
+        maxW={'xl'}
+        bg={useColorModeValue('white', 'gray.700')}
+        rounded={'xl'}
+        boxShadow={'lg'}
         p={6}
       >
-        <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
+        <Heading lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl' }}>
           User Profile
         </Heading>
         {/* <FormControl id="userName">
@@ -78,8 +83,7 @@ export default function UserProfile() {
           <FormLabel>Name</FormLabel>
           <Input
             value={user?.name}
-            placeholder="UserName"
-            _placeholder={{ color: "gray.500" }}
+            _placeholder={{ color: 'gray.500' }}
             type="text"
             // readOnly
             disabled
@@ -90,12 +94,11 @@ export default function UserProfile() {
           <Input
             disabled
             value={user?.email}
-            placeholder="your-email@example.com"
-            _placeholder={{ color: "gray.500" }}
+            _placeholder={{ color: 'gray.500' }}
             type="email"
           />
         </FormControl>
-        <FormControl id="mobile" isRequired>
+        {/* <FormControl id="mobile" isRequired>
           <FormLabel>Mobile</FormLabel>
           <Input
             disabled
@@ -104,7 +107,7 @@ export default function UserProfile() {
             _placeholder={{ color: "gray.500" }}
             type="text"
           />
-        </FormControl>
+        </FormControl> */}
         {/* <Stack spacing={6} direction={["column", "row"]}>
           <Button
             bg={"red.400"}
