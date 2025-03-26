@@ -6,7 +6,6 @@ export const signupHandler = async (user) => {
     return res.data;
   } catch (error) {
     console.log(error);
-    throw error;
   }
 };
 
@@ -16,7 +15,6 @@ export const loginHandler = async (user) => {
     return res.data;
   } catch (error) {
     console.log(error);
-    throw error;
   }
 };
 
@@ -26,6 +24,26 @@ export const getUserProfileHandler = async () => {
     return res.data;
   } catch (error) {
     console.log(error);
-    throw error;
+  }
+};
+
+export const forgotPasswordHandler = async (email) => {
+  try {
+    const res = await api.post('/user/forgot-password', { email });
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const resetPasswordHandler = async (token, password) => {
+  try {
+    const res = await api.post('/user/reset-password', {
+      token,
+      new_password: password,
+    });
+    return res.data;
+  } catch (error) {
+    console.log(error);
   }
 };

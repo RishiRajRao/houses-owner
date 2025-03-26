@@ -38,6 +38,14 @@ export default function SignUpPage({ handleSignup }) {
         isClosable: true,
       });
       handleSignup();
+    } else {
+      toast({
+        title: 'Account creation failed.',
+        description: 'Please try again.',
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      });
     }
   };
 

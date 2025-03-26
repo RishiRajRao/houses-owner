@@ -44,6 +44,14 @@ export default function LoginPage({ handleSignup }) {
         isClosable: true,
       });
       navigate('/dashboard');
+    } else {
+      toast({
+        title: 'Login failed',
+        description: 'Invalid email or password.',
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      });
     }
   };
   return (
@@ -103,7 +111,13 @@ export default function LoginPage({ handleSignup }) {
                 justify={'space-between'}
               >
                 {/* <Checkbox>Remember me</Checkbox> */}
-                <Text color={'blue.400'}>Forgot password?</Text>
+                <Link
+                  color={'blue.400'}
+                  as="a"
+                  onClick={() => navigate('/forgot-password')}
+                >
+                  Forgot password?
+                </Link>
               </Stack>
               <Button
                 bg={'blue.400'}
